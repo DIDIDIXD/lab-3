@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<books>
+  <book>
+    <title>Война и мир</title>
+    <author>Толстой</author>
+    <year>1869</year>
+    <pages>1300</pages>
+  </book>
+</books>

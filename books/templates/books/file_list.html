@@ -1,0 +1,15 @@
+{% extends 'books/base.html' %}
+{% block content %}
+<h1>Все файлы</h1>
+
+{% if not files %}
+    <p><strong>На сервере нет ни одного файла.</strong></p>
+{% else %}
+    {% for f in files %}
+        <div class="file">
+            <h3>{{ f.name }}</h3>
+            <pre>{{ f.content }}</pre>
+        </div>
+    {% endfor %}
+{% endif %}
+{% endblock %}

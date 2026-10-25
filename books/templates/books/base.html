@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Книги{% endblock %}</title>
+    <style>
+        body { font-family: sans-serif; max-width: 900px; margin: 20px auto; padding: 0 15px; }
+        nav a { margin-right: 15px; }
+        .msg { padding: 10px; margin: 5px 0; border-radius: 4px; }
+        .success { background: #d4edda; }
+        .error { background: #f8d7da; }
+        .file { border: 1px solid #ccc; padding: 10px; margin: 10px 0; }
+        pre { background: #f4f4f4; padding: 10px; white-space: pre-wrap; }
+        label { display: inline-block; min-width: 100px; }
+    </style>
+</head>
+<body>
+<nav>
+    <a href="{% url 'books:add' %}">Добавить</a>
+    <a href="{% url 'books:upload' %}">Загрузить файл</a>
+    <a href="{% url 'books:files' %}">Все файлы</a>
+</nav>
+<hr>
+{% for m in messages %}
+    <div class="msg {{ m.tags }}">{{ m }}</div>
+{% endfor %}
+{% block content %}{% endblock %}
+</body>
+</html>
